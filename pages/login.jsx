@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
+import useAuth from "../hooks/useAuth";
+import { useForm } from "react-hook-form";
 
 const login = () => {
+	const [login, setLogin] = useState(false);
+
+	const { signIn, signUp } = useAuth();
+
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm();
+
+	const onSubmit = async ({ email, password }) => {
+		if (login) {
+			await signIn(email, password);
+		} else {
+			await signUp(email, password);
+		}
+	};
+
 	return (
 		<div className="relative flex h-[110vh] items-center justify-center bg-black/50">
 			<Head>
@@ -22,32 +42,59 @@ const login = () => {
 				height={150}
 			/>
 
-			<form className="flex min-h-[400px] flex-col rounded-md bg-black px-16 pt-10 ">
+			<form
+				onSubmit={handleSubmit(onSubmit)}
+				className="flex flex-col rounded-md bg-black px-16 py-10 ">
 				<h2 className="text-4xl font-semibold ">Sign In</h2>
 
 				<div className="pt-9">
 					<input
-						type="text"
+						type="email"
 						placeholder="Enter email"
-						className="w-[20rem] rounded bg-[#333333] px-5 py-3 placeholder-[gray] outline-none focus:bg-[#454545]"
+						className={`${
+							errors.email && "border-b-[3px] border-orange-600"
+						} w-[21rem] rounded bg-[#333333] px-5 py-3 placeholder-[gray] outline-none focus:bg-[#454545]`}
+						{...register("email", { required: true })}
 					/>
+
+					{errors.email && (
+						<p className="mt-1 pl-1 text-[13px] font-light text-orange-500">
+							Please enter a valid email.
+						</p>
+					)}
 				</div>
 
 				<div className="pt-4">
 					<input
-						type="text"
+						type="password"
 						placeholder="Enter password"
-						className="w-[20rem] rounded bg-[#333333] px-5 py-3 placeholder-[gray] outline-none focus:bg-[#454545]"
+						className={`${
+							errors.email && "border-b-[3px] border-orange-600"
+						} w-[21rem] rounded bg-[#333333] px-5 py-3 placeholder-[gray] outline-none focus:bg-[#454545]`}
+						{...register("password", { required: true })}
 					/>
+
+					{errors.password && (
+						<p className="mt-1 pl-1 text-[13px] font-light text-orange-500">
+							Your password must contain between 4 and 60
+							characters.
+						</p>
+					)}
 				</div>
 
-				<button className="mt-6 rounded bg-red-600 py-3 hover:bg-red-600/90">
+				<button
+					type="submit"
+					onClick={() => setLogin(true)}
+					className="mt-9 rounded bg-red-600 py-3 hover:bg-red-600/90">
 					Sign In
 				</button>
 
 				<p className="mt-8 text-gray-600">
 					New to Netflix?{" "}
-					<button className="pl-1 text-white hover:underline">
+					<button
+						type="submit"
+						onClick={() => setLogin(false)}
+						className="pl-1 text-white hover:underline">
 						Sign up now
 					</button>
 				</p>

@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
 		});
 	}, [auth]);
 
-	const signUp = async () => {
+	const signUp = async (email, password) => {
 		setLoading(true);
 
 		await createUserWithEmailAndPassword(auth, email, password)
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
 			.finally(() => setLoading(false));
 	};
 
-	const signIn = async () => {
+	const signIn = async (email, password) => {
 		setLoading(true);
 
 		await signInWithEmailAndPassword(auth, email, password)
