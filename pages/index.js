@@ -3,6 +3,9 @@ import Banner from "../components/Banner";
 import requests from "../utils/requests";
 import Row from "../components/Row";
 import Head from "next/head";
+import Modal from "../components/Modal";
+import { useRecoilValue } from "recoil";
+import { modalAtomState } from "../recoil/modalAtoms";
 
 export default function Home({
 	netflixOriginals,
@@ -13,6 +16,8 @@ export default function Home({
 	horrorMovies,
 	documentaryMovies,
 }) {
+	const showModal = useRecoilValue(modalAtomState);
+
 	return (
 		<div className="relative h-[140vh] bg-gradient-to-b ">
 			<Head>
@@ -20,6 +25,9 @@ export default function Home({
 			</Head>
 
 			<Header />
+
+			{/* MODAL */}
+			{showModal && <Modal />}
 
 			<main className="relative space-y-24 pb-24">
 				<Banner netflixOriginals={netflixOriginals} />

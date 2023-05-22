@@ -2,7 +2,7 @@
 export const BASE_URL_IMAGE = "https://image.tmdb.org/t/p/original/";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-const BASE_URL = "https://api.themoviedb.org/3";
+export const BASE_URL = "https://api.themoviedb.org/3";
 
 const requests = {
 	fetchTrendingMovies: `${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=en-US`,

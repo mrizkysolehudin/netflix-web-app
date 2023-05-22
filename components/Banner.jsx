@@ -1,12 +1,17 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BASE_URL_IMAGE } from "../utils/requests";
 import { FaPlay } from "react-icons/fa";
 import { InformationCircleIcon } from "@heroicons/react/solid";
+import { useRecoilState } from "recoil";
+import { modalAtomState, movieAtomsState } from "../recoil/modalAtoms";
 
 const Banner = ({ netflixOriginals }) => {
 	const [movieBanner, setMovieBanner] = useState(null);
+
+	const [openModal, setOpenModal] = useRecoilState(modalAtomState);
+	const [openCurrentMovie, setOpenCurrentMovie] =
+		useRecoilState(movieAtomsState);
 
 	useEffect(() => {
 		setMovieBanner(
@@ -34,10 +39,20 @@ const Banner = ({ netflixOriginals }) => {
 					<p className="mt-4 text-2xl">{movieBanner?.overview}</p>
 
 					<div className="mt-8 flex items-center gap-x-4">
-						<button className="flex h-[3.3rem] w-32 items-center justify-center gap-x-2 rounded bg-white text-xl font-semibold text-black hover:opacity-80">
+						<button
+							onClick={() => {
+								setOpenModal(!openModal);
+								setOpenCurrentMovie(movieBanner);
+							}}
+							className="flex h-[3.3rem] w-32 items-center justify-center gap-x-2 rounded bg-white text-xl font-semibold text-black hover:opacity-80">
 							<FaPlay className="text-2xl" /> Play
 						</button>
-						<button className="flex h-[3.3rem] w-48 items-center justify-center gap-x-2 rounded bg-white/30 text-xl font-semibold hover:bg-white/20 ">
+						<button
+							onClick={() => {
+								setOpenModal(!openModal);
+								setOpenCurrentMovie(movieBanner);
+							}}
+							className="flex h-[3.3rem] w-48 items-center justify-center gap-x-2 rounded bg-white/30 text-xl font-semibold hover:bg-white/20 ">
 							<InformationCircleIcon className="w-8" /> More info
 						</button>
 					</div>
