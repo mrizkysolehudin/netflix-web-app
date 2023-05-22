@@ -3,7 +3,7 @@ import Head from "next/head";
 import useAuth from "../hooks/useAuth";
 import { useForm } from "react-hook-form";
 
-const login = () => {
+const Login = () => {
 	const [login, setLogin] = useState(false);
 
 	const { signIn, signUp } = useAuth();
@@ -103,4 +103,4 @@ const login = () => {
 	);
 };
 
-export default login;
+export default Login;
