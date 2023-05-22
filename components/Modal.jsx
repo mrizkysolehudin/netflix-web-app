@@ -125,8 +125,8 @@ const Modal = () => {
 						<section className="mt-12 flex w-[18%] flex-col gap-y-3 pr-3 text-sm font-light">
 							<p>
 								<span className="text-gray-500">Genres:</span>
-								{genres?.map((genre) => (
-									<span> {genre?.name},</span>
+								{genres?.map((genre, index) => (
+									<span key={index}> {genre?.name},</span>
 								))}
 							</p>
 							<p>
