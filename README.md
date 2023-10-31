@@ -1,34 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+ <img height="150" width="250" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"  />
+</div>
 
-## Getting Started
+# Netflix Web Application
 
-First, run the development server:
+This project is a web application built using Next.js technology and styled with Tailwind CSS. The application serves as a replica of the Netflix platform. In this web project, users can browse and watch trailers of available movies and TV series.
+
+
+<br />
+
+## Built with
+
+- Next JS
+- Recoil
+- TailwindCSS
+
+## Package dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
+"next": "13.4.3",
+"recoil": "^0.7.6",
+"firebase": "^9.22.0",
+"react-hook-form": "^7.41.5",
+"react-player": "^2.11.0",
+
+"@heroicons/react": "^1.0.6",
+"react-icons": "^4.7.1",
+
+"tailwind-scrollbar": "^2.1.0",
+"tailwind-scrollbar-hide": "^1.1.7",
+"tailwindcss-textshadow": "^2.1.3"
+
+"@mui/material": "^5.11.3",
+"@emotion/react": "^11.10.5",
+"@emotion/styled": "^11.10.5",
+
+"react": "18.2.0",
+"react-dom": "18.2.0",
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+NEXT_PUBLIC_API_KEY=
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Installation
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Clone the project
 
-## Learn More
+```bash
+  git clone https://github.com/mrizkysolehudin/netflix-web-app my-project
+```
 
-To learn more about Next.js, take a look at the following resources:
+Go to the project directory
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  cd my-project
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Install dependencies
 
-## Deploy on Vercel
+```bash
+  npm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Start the project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+  npm run dev
+```
+
+## Screenshots
+
+
+
+## Author
+
+💻 [Muchammad Rizky Solehudin](https://github.com/mrizkysolehudin)
+
+
+
+<br />
+
+## Related Project
+
+⚡[`Live Demo`](https://netflix-web-application.vercel.app/)⚡
