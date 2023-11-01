@@ -73,6 +73,14 @@ Start the project
 
 ## Screenshots
 
+| Login Page                                                                                                | Home Page (Hero Section)                                                                                             |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| ![Login Page](https://github.com/mrizkysolehudin/netflix-web-app/blob/main/public/assets/ss/login-page.png) | ![Home Page (Hero Section)](https://github.com/mrizkysolehudin/netflix-web-app/blob/main/public/assets/ss/home-page-(hero-section).png) |
+
+| Home Page (List Movies Section)                                                                                              | Movie Modal                                                                                            |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| ![Home Page (List Movies Section)](https://github.com/mrizkysolehudin/netflix-web-app/blob/main/public/assets/ss/home-page-(list-movies-section).png) | ![Movie Modal](https://github.com/mrizkysolehudin/netflix-web-app/blob/main/public/assets/ss/movie-modal.png) |
+
 
 
 ## Author
